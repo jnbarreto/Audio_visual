@@ -1,0 +1,303 @@
+
+[13:24:14] - SQL EXECUTADO COM SUCESSO:  SELECT colab.cod_colaborador,         colab.nome_colaborador,         colab.funcional,         cast(agend.data_reserva as varchar),         cast(agend.hora_reserva as varchar),         cast(agend.agendado_para as varchar),         cast(agend.horario_de as varchar),         cast(agend.horario_ate as varchar),         cast(agend.data_entrega as varchar),         cast(agend.hora_entrega as varchar),         equip.num_controle,         equip.marca,         equip.tipo,         equip.modelo  FROM app_colaboradores AS colab,       app_agendamento AS agend,       app_equipamentos AS equip,       app_equipamentos_agendados AS ea  WHERE agend.cod_colaborador = colab.cod_colaborador    AND ea.cod_equipamento = equip.cod_equipamento    AND agend.cod_agendamento = ea.cod_agendamento 
+
+[13:24:14] - NUMERO DE LINHAS RETORNADAS: 6
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_colaborador      -> 3
+          nome_colaborador     -> Ana Livia
+          funcional            -> SP147852
+          data_reserva         -> 2020-10-08
+          hora_reserva         -> 20:22:19
+          agendado_para        -> 2020-10-08
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          data_entrega         -> 
+          hora_entrega         -> 
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+    FIM DA LINHA: 1
+    LINHA: 2
+          cod_colaborador      -> 2
+          nome_colaborador     -> Juan Leone
+          funcional            -> SP321654
+          data_reserva         -> 2020-09-15
+          hora_reserva         -> 20:40:52
+          agendado_para        -> 2020-09-15
+          horario_de           -> 20:45:00
+          horario_ate          -> 22:00:00
+          data_entrega         -> 2020-09-15
+          hora_entrega         -> 
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+    FIM DA LINHA: 2
+    LINHA: 3
+          cod_colaborador      -> 3
+          nome_colaborador     -> Ana Livia
+          funcional            -> SP147852
+          data_reserva         -> 2020-09-15
+          hora_reserva         -> 20:46:22
+          agendado_para        -> 2020-09-15
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          data_entrega         -> 2020-09-15
+          hora_entrega         -> 20:47:59
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+    FIM DA LINHA: 3
+    LINHA: 4
+          cod_colaborador      -> 2
+          nome_colaborador     -> Juan Leone
+          funcional            -> SP321654
+          data_reserva         -> 2020-09-15
+          hora_reserva         -> 20:52:43
+          agendado_para        -> 2020-09-15
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          data_entrega         -> 
+          hora_entrega         -> 
+          num_controle         -> 333
+          marca                -> teste1
+          tipo                 -> teste2
+          modelo               -> teste3
+    FIM DA LINHA: 4
+    LINHA: 5
+          cod_colaborador      -> 2
+          nome_colaborador     -> Juan Leone
+          funcional            -> SP321654
+          data_reserva         -> 2020-09-23
+          hora_reserva         -> 19:45:03
+          agendado_para        -> 2020-09-23
+          horario_de           -> 20:45:00
+          horario_ate          -> 22:00:00
+          data_entrega         -> 
+          hora_entrega         -> 
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+    FIM DA LINHA: 5
+    LINHA: 6
+          cod_colaborador      -> 3
+          nome_colaborador     -> Ana Livia
+          funcional            -> SP147852
+          data_reserva         -> 2020-10-08
+          hora_reserva         -> 20:22:19
+          agendado_para        -> 2020-10-08
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          data_entrega         -> 
+          hora_entrega         -> 
+          num_controle         -> 5555
+          marca                -> Marca teste
+          tipo                 -> Tipo teste
+          modelo               -> Modelo teste
+    FIM DA LINHA: 6
+
+[13:25:28] - SQL EXECUTADO COM SUCESSO:  SELECT colab.cod_colaborador,         colab.nome_colaborador,         colab.funcional,         cast(agend.data_reserva as varchar),         cast(agend.hora_reserva as varchar),         cast(agend.agendado_para as varchar),         cast(agend.horario_de as varchar),         cast(agend.horario_ate as varchar),         cast(agend.data_entrega as varchar),         cast(agend.hora_entrega as varchar),         equip.num_controle,         equip.marca,         equip.tipo,         equip.modelo  FROM app_colaboradores AS colab,       app_agendamento AS agend,       app_equipamentos AS equip,       app_equipamentos_agendados AS ea  WHERE agend.cod_colaborador = colab.cod_colaborador    AND ea.cod_equipamento = equip.cod_equipamento    AND agend.cod_agendamento = ea.cod_agendamento 
+
+[13:25:28] - NUMERO DE LINHAS RETORNADAS: 6
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_colaborador      -> 3
+          nome_colaborador     -> Ana Livia
+          funcional            -> SP147852
+          data_reserva         -> 2020-10-08
+          hora_reserva         -> 20:22:19
+          agendado_para        -> 2020-10-08
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          data_entrega         -> 
+          hora_entrega         -> 
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+    FIM DA LINHA: 1
+    LINHA: 2
+          cod_colaborador      -> 2
+          nome_colaborador     -> Juan Leone
+          funcional            -> SP321654
+          data_reserva         -> 2020-09-15
+          hora_reserva         -> 20:40:52
+          agendado_para        -> 2020-09-15
+          horario_de           -> 20:45:00
+          horario_ate          -> 22:00:00
+          data_entrega         -> 2020-09-15
+          hora_entrega         -> 
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+    FIM DA LINHA: 2
+    LINHA: 3
+          cod_colaborador      -> 3
+          nome_colaborador     -> Ana Livia
+          funcional            -> SP147852
+          data_reserva         -> 2020-09-15
+          hora_reserva         -> 20:46:22
+          agendado_para        -> 2020-09-15
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          data_entrega         -> 2020-09-15
+          hora_entrega         -> 20:47:59
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+    FIM DA LINHA: 3
+    LINHA: 4
+          cod_colaborador      -> 2
+          nome_colaborador     -> Juan Leone
+          funcional            -> SP321654
+          data_reserva         -> 2020-09-15
+          hora_reserva         -> 20:52:43
+          agendado_para        -> 2020-09-15
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          data_entrega         -> 
+          hora_entrega         -> 
+          num_controle         -> 333
+          marca                -> teste1
+          tipo                 -> teste2
+          modelo               -> teste3
+    FIM DA LINHA: 4
+    LINHA: 5
+          cod_colaborador      -> 2
+          nome_colaborador     -> Juan Leone
+          funcional            -> SP321654
+          data_reserva         -> 2020-09-23
+          hora_reserva         -> 19:45:03
+          agendado_para        -> 2020-09-23
+          horario_de           -> 20:45:00
+          horario_ate          -> 22:00:00
+          data_entrega         -> 
+          hora_entrega         -> 
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+    FIM DA LINHA: 5
+    LINHA: 6
+          cod_colaborador      -> 3
+          nome_colaborador     -> Ana Livia
+          funcional            -> SP147852
+          data_reserva         -> 2020-10-08
+          hora_reserva         -> 20:22:19
+          agendado_para        -> 2020-10-08
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          data_entrega         -> 
+          hora_entrega         -> 
+          num_controle         -> 5555
+          marca                -> Marca teste
+          tipo                 -> Tipo teste
+          modelo               -> Modelo teste
+    FIM DA LINHA: 6
+
+[13:28:22] - SQL EXECUTADO COM SUCESSO:  SELECT colab.cod_colaborador,         colab.nome_colaborador,         colab.funcional,         cast(agend.data_reserva as varchar),         cast(agend.hora_reserva as varchar),         cast(agend.agendado_para as varchar),         cast(agend.horario_de as varchar),         cast(agend.horario_ate as varchar),         cast(agend.data_entrega as varchar),         cast(agend.hora_entrega as varchar),         equip.num_controle,         equip.marca,         equip.tipo,         equip.modelo  FROM app_colaboradores AS colab,       app_agendamento AS agend,       app_equipamentos AS equip,       app_equipamentos_agendados AS ea  WHERE agend.cod_colaborador = colab.cod_colaborador    AND ea.cod_equipamento = equip.cod_equipamento    AND agend.cod_agendamento = ea.cod_agendamento 
+
+[13:28:22] - NUMERO DE LINHAS RETORNADAS: 6
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_colaborador      -> 3
+          nome_colaborador     -> Ana Livia
+          funcional            -> SP147852
+          data_reserva         -> 2020-10-08
+          hora_reserva         -> 20:22:19
+          agendado_para        -> 2020-10-08
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          data_entrega         -> 
+          hora_entrega         -> 
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+    FIM DA LINHA: 1
+    LINHA: 2
+          cod_colaborador      -> 2
+          nome_colaborador     -> Juan Leone
+          funcional            -> SP321654
+          data_reserva         -> 2020-09-15
+          hora_reserva         -> 20:40:52
+          agendado_para        -> 2020-09-15
+          horario_de           -> 20:45:00
+          horario_ate          -> 22:00:00
+          data_entrega         -> 2020-09-15
+          hora_entrega         -> 
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+    FIM DA LINHA: 2
+    LINHA: 3
+          cod_colaborador      -> 3
+          nome_colaborador     -> Ana Livia
+          funcional            -> SP147852
+          data_reserva         -> 2020-09-15
+          hora_reserva         -> 20:46:22
+          agendado_para        -> 2020-09-15
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          data_entrega         -> 2020-09-15
+          hora_entrega         -> 20:47:59
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+    FIM DA LINHA: 3
+    LINHA: 4
+          cod_colaborador      -> 2
+          nome_colaborador     -> Juan Leone
+          funcional            -> SP321654
+          data_reserva         -> 2020-09-15
+          hora_reserva         -> 20:52:43
+          agendado_para        -> 2020-09-15
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          data_entrega         -> 
+          hora_entrega         -> 
+          num_controle         -> 333
+          marca                -> teste1
+          tipo                 -> teste2
+          modelo               -> teste3
+    FIM DA LINHA: 4
+    LINHA: 5
+          cod_colaborador      -> 2
+          nome_colaborador     -> Juan Leone
+          funcional            -> SP321654
+          data_reserva         -> 2020-09-23
+          hora_reserva         -> 19:45:03
+          agendado_para        -> 2020-09-23
+          horario_de           -> 20:45:00
+          horario_ate          -> 22:00:00
+          data_entrega         -> 
+          hora_entrega         -> 
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+    FIM DA LINHA: 5
+    LINHA: 6
+          cod_colaborador      -> 3
+          nome_colaborador     -> Ana Livia
+          funcional            -> SP147852
+          data_reserva         -> 2020-10-08
+          hora_reserva         -> 20:22:19
+          agendado_para        -> 2020-10-08
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          data_entrega         -> 
+          hora_entrega         -> 
+          num_controle         -> 5555
+          marca                -> Marca teste
+          tipo                 -> Tipo teste
+          modelo               -> Modelo teste
+    FIM DA LINHA: 6
