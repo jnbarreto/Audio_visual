@@ -1,0 +1,104 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Áudio Visual - Unip</title>
+    <meta name="description" content="Aúdio Visual - Unip">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+
+    <link rel="stylesheet" href="../vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../vendors/selectFX/css/cs-skin-elastic.css">
+
+    <!-- jQuery Confirm -->
+    <link rel="stylesheet" href="../vendors/jquery-confirm-v3.3.4/css/jquery-confirm.css">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="bg-dark">
+
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="index.html"></a>
+                </div>
+
+                <div class="divLogoLogin">
+                    <img class="align-content imgLogo" src="../images/uniplogo.png" alt="">
+                </div>
+
+                <div class="login-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control upper" maxlength="10" placeholder="Digite o seu login de acesso" id="funcional">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="DIGITE SUA SENHA DE ACESSO" id="senha" >
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="lembre-me"> Lembre-me
+                            </label>
+                            
+                            <label class="pull-right">
+                                <a href="page-esqueceu-senha.html">Esqueceu sua senha?</a>
+                            </label>
+                        </div>
+
+                        <button type="button" class="btn btn-success btn-flat m-b-30 m-t-30" id="acesso">Acessar</button>
+        
+                        <div class="register-link m-t-15 text-center" style="padding-top: 10px;">
+                            <a href="/frontend/pages/page-solicitacao.html"> Solicitar Cadastro</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <script src="../vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <!-- jQuery Confirm -->
+    <!-- <script src="../../vendors/jquery-confirm-v3.3.4/js/jquery-confirm.js"></script> -->
+    <script src="../vendors/jquery-confirm-v3.3.4/dist/jquery-confirm.min.js"></script>
+
+    <!-- Arquivos Custom -->
+    <script src="../js/geral.js"></script>
+    <script src="../js/localStorage.js"></script>
+    <script src="../js/login.js"></script>
+
+    <script>
+        jQuery(document).ready(function()
+        {
+            if(localStorage.getItem('SessionUID') != undefined)
+            {
+                AutoLogin();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

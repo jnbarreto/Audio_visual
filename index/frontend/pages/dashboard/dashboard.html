@@ -1,0 +1,294 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>UNIP - Audio Visual</title>
+    <meta name="description" content="UNIP - Audio Visual">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="../../apple-icon.png">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <link rel="stylesheet" href="../../vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="../../vendors/jqvmap/dist/jqvmap.min.css">
+    <link rel="stylesheet" href="../../vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
+
+    <!-- PNotify -->
+    <link rel="stylesheet" type="text/css" href="../../vendors/pnotify/dist/PNotifyBrightTheme.css">
+    
+    <!-- jQuery Confirm -->
+    <link rel="stylesheet" href="../../vendors/jquery-confirm-v3.3.4/css/jquery-confirm.css">
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom -->
+    <link rel="stylesheet" href="../../css/custom.css">
+    
+
+</head>
+
+<body onload="validaAcesso(this);" style="display: none;">
+
+
+    <!-- Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="./"><img src="../../images/uniplogo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="../../images/uniplogo2.png" alt="Logo"></a>
+            </div>
+
+            
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <!-- Menu montado dinamicamente no arquivo geral.js -->
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+
+            <div class="header-menu">
+
+                <div class="col-sm-7">
+                     <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="../../images/admin.jpg" alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <!-- <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a> -->
+
+                            <a class="nav-link" href="#" id="logout"><i class="fa fa-power-off"></i> Logout</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Agendamentos</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Agendamentos</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="card-body">
+                            <div class="custom-tab">
+                                <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="custom-nav-home-tab" data-toggle="tab" href="#agendado" role="tab" aria-controls="custom-nav-home" aria-selected="true" style="font-size: 13px;">Agendado <span class="badge badge-warning" id="count_agendado">0</span></a>
+                                        <a class="nav-item nav-link" id="custom-nav-profile-tab" data-toggle="tab" href="#aguardando_retirada" role="tab" aria-controls="custom-nav-profile" aria-selected="false" style="font-size: 13px;">Aguardando Retirada <span class="badge badge-warning" id="count_aguardando_retirada">0</span></a>
+                                        <a class="nav-item nav-link" id="custom-nav-contact-tab" data-toggle="tab" href="#aguardando_entrega" role="tab" aria-controls="custom-nav-contact" aria-selected="false" style="font-size: 13px;">Aguardando Entrega <span class="badge badge-warning" id="count_aguardando_entrega" >0</span></a>
+                                        <a class="nav-item nav-link" id="custom-nav-contact-tab" data-toggle="tab" href="#entrega_confirmada" role="tab" aria-controls="custom-nav-contact" aria-selected="false" style="font-size: 13px;">Entrega Confirmada <span class="badge badge-warning" id="count_entrega_confirmada">0</span></a>
+                                        <a class="nav-item nav-link" id="custom-nav-contact-tab" data-toggle="tab" href="#solicitacao_cancelada" role="tab" aria-controls="custom-nav-contact" aria-selected="false" style="font-size: 13px;">Solicitação Cancelada <span class="badge badge-warning" id="count_solicitacao_cancelada">0</span></a>
+                                        <a class="nav-item nav-link" id="custom-nav-contact-tab" data-toggle="tab" href="#solicitacao_em_atraso" role="tab" aria-controls="custom-nav-contact" aria-selected="false" style="font-size: 13px;">Entrega em Atraso <span class="badge badge-warning" id="count_solicitacao_atraso">0</span></a>
+                                    </div>
+                                </nav>
+
+                                <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="agendado" role="tabpanel" aria-labelledby="custom-nav-home-tab" style="padding-top: 20px;">
+                                        <!--/.col-->
+
+                                        <!--/.col-->
+                                    </div>
+                                    <div class="tab-pane fade" id="aguardando_retirada" role="tabpanel" aria-labelledby="custom-nav-profile-tab" style="padding-top: 20px;">
+
+                                        <!--/.col-->
+
+                                        <!--/.col-->
+
+                                    </div>
+                                    <div class="tab-pane fade" id="aguardando_entrega" role="tabpanel" aria-labelledby="custom-nav-contact-tab" style="padding-top: 20px;">
+
+                                        <!--/.col-->
+
+                                        <!--/.col-->
+
+                                    </div>
+                                    <div class="tab-pane fade" id="entrega_confirmada" role="tabpanel" aria-labelledby="custom-nav-contact-tab" style="padding-top: 20px;">
+                                        <!--/.col-->
+
+                                        <!--/.col-->
+                                    </div>
+                                    <div class="tab-pane fade" id="solicitacao_cancelada" role="tabpanel" aria-labelledby="custom-nav-contact-tab" style="padding-top: 20px;">
+                                        <!--/.col-->
+
+                                        <!--/.col-->
+                                    </div>
+                                    <div class="tab-pane fade" id="solicitacao_em_atraso" role="tabpanel" aria-labelledby="custom-nav-contact-tab" style="padding-top: 20px;">
+                                        <!--/.col-->
+
+                                        <!--/.col-->
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div> <!--Card body-->
+                    </div>
+
+                </div>
+            </div>
+
+        </div> <!-- .content -->
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+    <!-- MODAL -->
+    <div class="modal fade" id="dadosAgendamento" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mediumModalLabel">Detalhamento Agendamento</h5> 
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="ListaEquipamentosAgendamento">
+                    <input type="hidden" class="form-control" id="cod_agendamento">
+
+                    <div class="col-md-12 col-sm-6 col-xs-12 form-group">
+                        <label class=" form-control-label">Solicitante</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="solicitante">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+                        <label class=" form-control-label">Agendado no dia</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="agendado_em">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+                        <label class=" form-control-label">Agendado para o dia</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="agendado_para">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+                        <label class=" form-control-label">Horario de - ate</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="horario_de_ate">
+                        </div>
+                    </div>  
+                    
+                </div>
+
+                <div id="listaEquipamentosAgendados" class="col-md-12 col-sm-6 col-xs-12 form-group">
+
+                </div>
+
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
+                    <button type="button" class="btn btn-primary" id="aprovar">Salvar</button>
+                    <button type="button" class="btn btn-danger" id="cancelar">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>          
+
+    <script src="../../vendors/jquery/dist/jquery.min.js"></script>
+    <script src="../../vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/main.js"></script>
+
+    <script src="../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../../vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../../vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="../../vendors/jszip/dist/jszip.min.js"></script>
+    <script src="../../vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="../../vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="../../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="../../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="../../vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="../../assets/js/init-scripts/data-table/datatables-init.js"></script>
+
+    <!-- PNotify -->
+    <script src="../../vendors/pnotify/dist/iife/PNotify.js"></script>
+    <script src="../../vendors/pnotify/dist/iife/PNotifyButtons.js"></script>
+    
+    <!-- jQuery Confirm -->
+    <!-- <script src="../../vendors/jquery-confirm-v3.3.4/js/jquery-confirm.js"></script> -->
+    <script src="../../vendors/jquery-confirm-v3.3.4/dist/jquery-confirm.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="../../js/geral.js"></script>
+    <script src="../../js/colaboradores.js"></script>
+    <script src="../../js/login.js"></script>
+    <script src="../../js/localStorage.js"></script>
+    <script src="../../js/dashboard.js"></script>
+
+    <script>
+        jQuery(document).ready(function(){
+            //efetua chamada para funcao leftPanel() que montara o menu ao lado esquerdo
+            //funcao esta localizada no arquivo geral.js
+            leftPanel();
+            listaAgendamentos();
+            //efetua consulta na API para a funcao colaboradores(ColaboradoresController) executando o metodo select
+            //enviando o retorno para a funcao listaColaboradores
+            //consultaWS('colaboradores', 'select', null, listaColaboradores);
+
+        });
+    </script>
+
+</body>
+
+</html>

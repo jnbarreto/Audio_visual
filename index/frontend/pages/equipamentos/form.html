@@ -1,0 +1,258 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>UNIP - Audio Visual</title>
+    <meta name="description" content="UNIP - Audio Visual">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="../../apple-icon.png">
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <link rel="stylesheet" href="../../vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="../../vendors/jqvmap/dist/jqvmap.min.css"> 
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../vendors/switchery-master/dist/switchery.min.css">
+
+    <!-- jQuery Confirm -->
+    <link rel="stylesheet" href="../../vendors/jquery-confirm-v3.3.4/css/jquery-confirm.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- CSS CUSTOM -->
+    <link rel="stylesheet" href="../../css/custom.css">
+
+</head>
+
+<body onload="validaAcesso(this);" style="display: none;">
+
+
+    <!-- Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="./"><img src="../../images/uniplogo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="../../images/uniplogo2.png" alt="Logo"></a>
+            </div>
+
+            
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <!-- Menu montado dinamicamente no arquivo geral.js -->
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+
+            <div class="header-menu">
+
+                <div class="col-sm-7">
+                     <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="../../images/admin.jpg" alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <!-- <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a> -->
+
+                            <a class="nav-link" href="#" id="logout"><i class="fa fa-power-off"></i> Logout</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="/frontend/pages/">Dashboard</a></li>
+                            <li><a href="/frontend/pages/equipamentos/">Equipamentos Cadastrados</a></li>
+                            <li class="active">Cadastro de Equipamentos</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="card">
+
+                            <!-- Inputs Hidden -->
+                            <input type="hidden" id="cod_equipamento" value="">
+                            <input type="hidden" id="alteracao" value="N">
+                            <!-- Inputs Hidden -->
+                            <div class="card-header">
+                                <strong>Cadastro de Permissões</strong> <small> nível de acesso</small>
+                            </div>
+                            <div class="card-body card-block">
+                                
+                                <div class="fontawesome-icon-list">
+
+                                    <div id="dados_permissoes">
+                                        <h2 class="page-header">Dados Equipamentos</h2>
+                                        <div class="row fontawesome-icon-list">
+                                            <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                                <label class=" form-control-label">Cod. Patrimônio</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-edit"></i></div>
+                                                    <input class="form-control upper" id="cod_patrimonio">
+                                                </div>
+                                                <small class="form-text text-muted">ex. xxxxxxxx</small>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                                <label class=" form-control-label">Num Controle</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-edit"></i></div>
+                                                    <input class="form-control upper" id="num_controle">
+                                                </div>
+                                                <small class="form-text text-muted">ex. xxxxxxxx</small>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+                                                <label class=" form-control-label">Marca</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-edit"></i></div>
+                                                    <input class="form-control upper" id="marca">
+                                                </div>
+                                                <small class="form-text text-muted">ex. teste</small>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+                                                <label class=" form-control-label">Tipo</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-edit"></i></div>
+                                                    <input class="form-control upper" id="tipo">
+                                                </div>
+                                                <small class="form-text text-muted">ex. teste</small>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+                                                <label class=" form-control-label">Modelo</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-edit"></i></div>
+                                                    <input class="form-control upper" id="modelo">
+                                                </div>
+                                                <small class="form-text text-muted">ex. teste</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="card-footer">
+                                <button type="reset" class="btn btn-danger btn-sm buttonsRight">
+                                    <i class="fa fa-ban"></i> Limpar
+                                </button>
+                                
+                                <button class="btn btn-primary btn-sm buttonsRight" id="salvar_equipamento"> 
+                                    <i class="fa fa-dot-circle-o"></i> Salvar
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- .content -->
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+    <script src="../../vendors/jquery/dist/jquery.min.js"></script>
+    <script src="../../vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/main.js"></script>
+
+    <script src="../../vendors/switchery-master/dist/switchery.min.js"></script>
+
+    <!-- jQuery Confirm -->
+    <!-- <script src="../../vendors/jquery-confirm-v3.3.4/js/jquery-confirm.js"></script> -->
+    <script src="../../vendors/jquery-confirm-v3.3.4/dist/jquery-confirm.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="../../js/geral.js"></script>
+    <script src="../../js/equipamentos.js"></script>
+    <script src="../../js/login.js"></script>
+    <script src="../../js/localStorage.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () 
+        {
+            leftPanel();
+
+            // Jquery Switch
+            var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+            elems.forEach(function(html) {
+                var switchery = new Switchery(html, {size: "small", color: "#6c757d"});
+            });
+        });
+    </script>
+
+    <script>
+        jQuery(document).ready(function(){
+            jQuery("#salvar_equipamento").click(function(){
+                insertEquipamentos();
+            });
+
+            var params = getUrlParametro();
+            if(params['id'] != undefined)
+            {
+                setTimeout(function(){
+                    getEquipamentos(params['id']);
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
