@@ -1,0 +1,404 @@
+
+[14:03:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE login = 'SP123456' AND senha = '1' AND status_ativo = 'S'
+
+[14:03:27] - NUMERO DE LINHAS RETORNADAS: 0
+
+[14:03:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE login = 'SP123456' AND senha = 'MQ==' AND status_ativo = 'S'
+
+[14:03:27] - NUMERO DE LINHAS RETORNADAS: 0
+
+[14:03:32] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE login = 'SP123456' AND senha = '123' AND status_ativo = 'S'
+
+[14:03:32] - NUMERO DE LINHAS RETORNADAS: 0
+
+[14:03:32] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE login = 'SP123456' AND senha = 'MTIz' AND status_ativo = 'S'
+
+[14:03:32] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_acesso           -> 9
+          cod_colaborador      -> 15
+          login                -> SP123456
+          senha                -> MTIz
+          status_ativo         -> S
+          auto_login           -> False
+          cod_auto_login       -> 
+    FIM DA LINHA: 1
+
+[14:03:32] - SQL EXECUTADO COM SUCESSO: select colaborador.*, cargo.tipo_cargo, permissao.tipo_permissao  from app_colaboradores colaborador, app_cargos cargo, app_permissoes permissao where colaborador.cod_cargo = cargo.cod_cargo and colaborador.cod_permissao = permissao.cod_permissao and colaborador.cod_colaborador = '15'
+
+[14:03:32] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_colaborador      -> 15
+          cod_cargo            -> 2
+          cod_permissao        -> 1
+          nome_colaborador     -> Matheus Machado
+          email                -> matheus_machado1997@hotmail.com
+          contato              -> 19982497858
+          funcional            -> SP123456
+          tipo_cargo           -> Administrador
+          tipo_permissao       -> Acesso Geral
+    FIM DA LINHA: 1
+
+[14:03:32] - SQL EXECUTADO COM SUCESSO: select cod_agendamento, agendado_para from app_agendamento where cod_status_agendamento = 3
+
+[14:03:32] - NUMERO DE LINHAS RETORNADAS: 0
+
+[14:03:34] - SQL EXECUTADO COM SUCESSO: SELECT agend.*, colab.nome_colaborador,(SELECT colab.nome_colaborador FROM app_colaboradores colab WHERE agend.cod_resp_alteracao = colab.cod_colaborador) as resp_alteracao, (SELECT colab.nome_colaborador FROM app_colaboradores colab WHERE colab.cod_colaborador = agend.cod_colaborador) as agendado_por,status.tipo_status_agendamento, status.descricao_status_agendamento  FROM app_agendamento agend, app_colaboradores colab, app_status_agendamento status  WHERE agend.cod_colaborador = colab.cod_colaborador AND agend.cod_status_agendamento = status.cod_status_agendamento 
+
+[14:03:34] - NUMERO DE LINHAS RETORNADAS: 5
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_agendamento      -> 15
+          cod_colaborador      -> 3
+          cod_status_agendamento -> 4
+          data_reserva         -> 10/8/2020 12:00:00 AM
+          data_entrega         -> 
+          cod_resp_alteracao   -> 15
+          cod_agendado_por     -> 15
+          agendado_para        -> 10/8/2020 12:00:00 AM
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          hora_reserva         -> 20:22:19
+          hora_entrega         -> 
+          nome_colaborador     -> Ana Livia
+          resp_alteracao       -> Matheus Machado
+          agendado_por         -> Ana Livia
+          tipo_status_agendamento -> Solicitação Cancelada
+          descricao_status_agendamento -> Agendamento cancelado
+    FIM DA LINHA: 1
+    LINHA: 2
+          cod_agendamento      -> 13
+          cod_colaborador      -> 2
+          cod_status_agendamento -> 4
+          data_reserva         -> 9/15/2020 12:00:00 AM
+          data_entrega         -> 
+          cod_resp_alteracao   -> 15
+          cod_agendado_por     -> 15
+          agendado_para        -> 9/15/2020 12:00:00 AM
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          hora_reserva         -> 20:52:43
+          hora_entrega         -> 
+          nome_colaborador     -> Juan Leone
+          resp_alteracao       -> Matheus Machado
+          agendado_por         -> Juan Leone
+          tipo_status_agendamento -> Solicitação Cancelada
+          descricao_status_agendamento -> Agendamento cancelado
+    FIM DA LINHA: 2
+    LINHA: 3
+          cod_agendamento      -> 14
+          cod_colaborador      -> 2
+          cod_status_agendamento -> 4
+          data_reserva         -> 9/23/2020 12:00:00 AM
+          data_entrega         -> 
+          cod_resp_alteracao   -> 15
+          cod_agendado_por     -> 2
+          agendado_para        -> 9/23/2020 12:00:00 AM
+          horario_de           -> 20:45:00
+          horario_ate          -> 22:00:00
+          hora_reserva         -> 19:45:03
+          hora_entrega         -> 
+          nome_colaborador     -> Juan Leone
+          resp_alteracao       -> Matheus Machado
+          agendado_por         -> Juan Leone
+          tipo_status_agendamento -> Solicitação Cancelada
+          descricao_status_agendamento -> Agendamento cancelado
+    FIM DA LINHA: 3
+    LINHA: 4
+          cod_agendamento      -> 12
+          cod_colaborador      -> 3
+          cod_status_agendamento -> 6
+          data_reserva         -> 9/15/2020 12:00:00 AM
+          data_entrega         -> 9/15/2020 12:00:00 AM
+          cod_resp_alteracao   -> 15
+          cod_agendado_por     -> 15
+          agendado_para        -> 9/15/2020 12:00:00 AM
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          hora_reserva         -> 20:46:22
+          hora_entrega         -> 20:47:59
+          nome_colaborador     -> Ana Livia
+          resp_alteracao       -> Matheus Machado
+          agendado_por         -> Ana Livia
+          tipo_status_agendamento -> Entrega Confirmada
+          descricao_status_agendamento -> Devolução efetuada
+    FIM DA LINHA: 4
+    LINHA: 5
+          cod_agendamento      -> 11
+          cod_colaborador      -> 2
+          cod_status_agendamento -> 6
+          data_reserva         -> 9/15/2020 12:00:00 AM
+          data_entrega         -> 9/15/2020 12:00:00 AM
+          cod_resp_alteracao   -> 15
+          cod_agendado_por     -> 15
+          agendado_para        -> 9/15/2020 12:00:00 AM
+          horario_de           -> 20:45:00
+          horario_ate          -> 22:00:00
+          hora_reserva         -> 20:40:52
+          hora_entrega         -> 
+          nome_colaborador     -> Juan Leone
+          resp_alteracao       -> Matheus Machado
+          agendado_por         -> Juan Leone
+          tipo_status_agendamento -> Entrega Confirmada
+          descricao_status_agendamento -> Devolução efetuada
+    FIM DA LINHA: 5
+
+[14:03:34] - SQL EXECUTADO COM SUCESSO: SELECT e.* FROM app_equipamentos e, app_equipamentos_agendados ea WHERE e.cod_equipamento = ea.cod_equipamento AND ea.cod_agendamento = '15'
+
+[14:03:34] - NUMERO DE LINHAS RETORNADAS: 2
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_equipamento      -> 3
+          cod_patrimonio       -> 6666
+          num_controle         -> 5555
+          marca                -> Marca teste
+          tipo                 -> Tipo teste
+          modelo               -> Modelo teste
+          status_ativo         -> S
+    FIM DA LINHA: 1
+    LINHA: 2
+          cod_equipamento      -> 1
+          cod_patrimonio       -> 111
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+          status_ativo         -> S
+    FIM DA LINHA: 2
+
+[14:03:34] - SQL EXECUTADO COM SUCESSO: SELECT e.* FROM app_equipamentos e, app_equipamentos_agendados ea WHERE e.cod_equipamento = ea.cod_equipamento AND ea.cod_agendamento = '13'
+
+[14:03:34] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_equipamento      -> 2
+          cod_patrimonio       -> 222
+          num_controle         -> 333
+          marca                -> teste1
+          tipo                 -> teste2
+          modelo               -> teste3
+          status_ativo         -> S
+    FIM DA LINHA: 1
+
+[14:03:34] - SQL EXECUTADO COM SUCESSO: SELECT e.* FROM app_equipamentos e, app_equipamentos_agendados ea WHERE e.cod_equipamento = ea.cod_equipamento AND ea.cod_agendamento = '14'
+
+[14:03:34] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_equipamento      -> 1
+          cod_patrimonio       -> 111
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+          status_ativo         -> S
+    FIM DA LINHA: 1
+
+[14:03:34] - SQL EXECUTADO COM SUCESSO: SELECT e.* FROM app_equipamentos e, app_equipamentos_agendados ea WHERE e.cod_equipamento = ea.cod_equipamento AND ea.cod_agendamento = '12'
+
+[14:03:34] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_equipamento      -> 1
+          cod_patrimonio       -> 111
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+          status_ativo         -> S
+    FIM DA LINHA: 1
+
+[14:03:34] - SQL EXECUTADO COM SUCESSO: SELECT e.* FROM app_equipamentos e, app_equipamentos_agendados ea WHERE e.cod_equipamento = ea.cod_equipamento AND ea.cod_agendamento = '11'
+
+[14:03:34] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_equipamento      -> 1
+          cod_patrimonio       -> 111
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+          status_ativo         -> S
+    FIM DA LINHA: 1
+
+[14:06:30] - SQL EXECUTADO COM SUCESSO: SELECT agend.*, colab.nome_colaborador,(SELECT colab.nome_colaborador FROM app_colaboradores colab WHERE agend.cod_resp_alteracao = colab.cod_colaborador) as resp_alteracao, (SELECT colab.nome_colaborador FROM app_colaboradores colab WHERE colab.cod_colaborador = agend.cod_colaborador) as agendado_por,status.tipo_status_agendamento, status.descricao_status_agendamento  FROM app_agendamento agend, app_colaboradores colab, app_status_agendamento status  WHERE agend.cod_colaborador = colab.cod_colaborador AND agend.cod_status_agendamento = status.cod_status_agendamento 
+
+[14:06:30] - NUMERO DE LINHAS RETORNADAS: 5
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_agendamento      -> 15
+          cod_colaborador      -> 3
+          cod_status_agendamento -> 4
+          data_reserva         -> 10/8/2020 12:00:00 AM
+          data_entrega         -> 
+          cod_resp_alteracao   -> 15
+          cod_agendado_por     -> 15
+          agendado_para        -> 10/8/2020 12:00:00 AM
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          hora_reserva         -> 20:22:19
+          hora_entrega         -> 
+          nome_colaborador     -> Ana Livia
+          resp_alteracao       -> Matheus Machado
+          agendado_por         -> Ana Livia
+          tipo_status_agendamento -> Solicitação Cancelada
+          descricao_status_agendamento -> Agendamento cancelado
+    FIM DA LINHA: 1
+    LINHA: 2
+          cod_agendamento      -> 13
+          cod_colaborador      -> 2
+          cod_status_agendamento -> 4
+          data_reserva         -> 9/15/2020 12:00:00 AM
+          data_entrega         -> 
+          cod_resp_alteracao   -> 15
+          cod_agendado_por     -> 15
+          agendado_para        -> 9/15/2020 12:00:00 AM
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          hora_reserva         -> 20:52:43
+          hora_entrega         -> 
+          nome_colaborador     -> Juan Leone
+          resp_alteracao       -> Matheus Machado
+          agendado_por         -> Juan Leone
+          tipo_status_agendamento -> Solicitação Cancelada
+          descricao_status_agendamento -> Agendamento cancelado
+    FIM DA LINHA: 2
+    LINHA: 3
+          cod_agendamento      -> 14
+          cod_colaborador      -> 2
+          cod_status_agendamento -> 4
+          data_reserva         -> 9/23/2020 12:00:00 AM
+          data_entrega         -> 
+          cod_resp_alteracao   -> 15
+          cod_agendado_por     -> 2
+          agendado_para        -> 9/23/2020 12:00:00 AM
+          horario_de           -> 20:45:00
+          horario_ate          -> 22:00:00
+          hora_reserva         -> 19:45:03
+          hora_entrega         -> 
+          nome_colaborador     -> Juan Leone
+          resp_alteracao       -> Matheus Machado
+          agendado_por         -> Juan Leone
+          tipo_status_agendamento -> Solicitação Cancelada
+          descricao_status_agendamento -> Agendamento cancelado
+    FIM DA LINHA: 3
+    LINHA: 4
+          cod_agendamento      -> 12
+          cod_colaborador      -> 3
+          cod_status_agendamento -> 6
+          data_reserva         -> 9/15/2020 12:00:00 AM
+          data_entrega         -> 9/15/2020 12:00:00 AM
+          cod_resp_alteracao   -> 15
+          cod_agendado_por     -> 15
+          agendado_para        -> 9/15/2020 12:00:00 AM
+          horario_de           -> 22:00:00
+          horario_ate          -> 23:15:00
+          hora_reserva         -> 20:46:22
+          hora_entrega         -> 20:47:59
+          nome_colaborador     -> Ana Livia
+          resp_alteracao       -> Matheus Machado
+          agendado_por         -> Ana Livia
+          tipo_status_agendamento -> Entrega Confirmada
+          descricao_status_agendamento -> Devolução efetuada
+    FIM DA LINHA: 4
+    LINHA: 5
+          cod_agendamento      -> 11
+          cod_colaborador      -> 2
+          cod_status_agendamento -> 6
+          data_reserva         -> 9/15/2020 12:00:00 AM
+          data_entrega         -> 9/15/2020 12:00:00 AM
+          cod_resp_alteracao   -> 15
+          cod_agendado_por     -> 15
+          agendado_para        -> 9/15/2020 12:00:00 AM
+          horario_de           -> 20:45:00
+          horario_ate          -> 22:00:00
+          hora_reserva         -> 20:40:52
+          hora_entrega         -> 
+          nome_colaborador     -> Juan Leone
+          resp_alteracao       -> Matheus Machado
+          agendado_por         -> Juan Leone
+          tipo_status_agendamento -> Entrega Confirmada
+          descricao_status_agendamento -> Devolução efetuada
+    FIM DA LINHA: 5
+
+[14:06:30] - SQL EXECUTADO COM SUCESSO: SELECT e.* FROM app_equipamentos e, app_equipamentos_agendados ea WHERE e.cod_equipamento = ea.cod_equipamento AND ea.cod_agendamento = '15'
+
+[14:06:30] - NUMERO DE LINHAS RETORNADAS: 2
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_equipamento      -> 3
+          cod_patrimonio       -> 6666
+          num_controle         -> 5555
+          marca                -> Marca teste
+          tipo                 -> Tipo teste
+          modelo               -> Modelo teste
+          status_ativo         -> S
+    FIM DA LINHA: 1
+    LINHA: 2
+          cod_equipamento      -> 1
+          cod_patrimonio       -> 111
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+          status_ativo         -> S
+    FIM DA LINHA: 2
+
+[14:06:30] - SQL EXECUTADO COM SUCESSO: SELECT e.* FROM app_equipamentos e, app_equipamentos_agendados ea WHERE e.cod_equipamento = ea.cod_equipamento AND ea.cod_agendamento = '13'
+
+[14:06:30] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_equipamento      -> 2
+          cod_patrimonio       -> 222
+          num_controle         -> 333
+          marca                -> teste1
+          tipo                 -> teste2
+          modelo               -> teste3
+          status_ativo         -> S
+    FIM DA LINHA: 1
+
+[14:06:30] - SQL EXECUTADO COM SUCESSO: SELECT e.* FROM app_equipamentos e, app_equipamentos_agendados ea WHERE e.cod_equipamento = ea.cod_equipamento AND ea.cod_agendamento = '14'
+
+[14:06:30] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_equipamento      -> 1
+          cod_patrimonio       -> 111
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+          status_ativo         -> S
+    FIM DA LINHA: 1
+
+[14:06:30] - SQL EXECUTADO COM SUCESSO: SELECT e.* FROM app_equipamentos e, app_equipamentos_agendados ea WHERE e.cod_equipamento = ea.cod_equipamento AND ea.cod_agendamento = '12'
+
+[14:06:30] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_equipamento      -> 1
+          cod_patrimonio       -> 111
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+          status_ativo         -> S
+    FIM DA LINHA: 1
+
+[14:06:30] - SQL EXECUTADO COM SUCESSO: SELECT e.* FROM app_equipamentos e, app_equipamentos_agendados ea WHERE e.cod_equipamento = ea.cod_equipamento AND ea.cod_agendamento = '11'
+
+[14:06:30] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_equipamento      -> 1
+          cod_patrimonio       -> 111
+          num_controle         -> 222
+          marca                -> teste
+          tipo                 -> teste
+          modelo               -> teste
+          status_ativo         -> S
+    FIM DA LINHA: 1

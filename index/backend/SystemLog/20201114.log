@@ -1,0 +1,299 @@
+
+[15:50:27] - SQL EXECUTADO COM SUCESSO: SELECT colaborador.*, cargo.tipo_cargo, permissao.tipo_permissao FROM app_colaboradores colaborador, app_cargos cargo, app_permissoes permissao WHERE colaborador.cod_cargo = cargo.cod_cargo AND colaborador.cod_permissao = permissao.cod_permissao 
+
+[15:50:27] - SQL EXECUTADO COM SUCESSO:  SELECT colab.cod_colaborador,         colab.nome_colaborador,         colab.funcional,         agend.data_reserva,         agend.hora_reserva,         agend.agendado_para,         agend.horario_de,         agend.horario_ate,         agend.data_entrega,         agend.hora_entrega,         equip.num_controle,         equip.marca,         equip.tipo,         equip.modelo  FROM app_colaboradores AS colab,       app_agendamento AS agend,       app_equipamentos AS equip,       app_equipamentos_agendados AS ea  WHERE agend.cod_colaborador = colab.cod_colaborador    AND ea.cod_equipamento = equip.cod_equipamento    AND agend.cod_agendamento = ea.cod_agendamento  ORDER BY agendado_para DESC
+
+[15:50:27] - NUMERO DE LINHAS RETORNADAS: 12
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_colaborador      -> 15
+          cod_cargo            -> 2
+          cod_permissao        -> 1
+          nome_colaborador     -> Matheus Machado
+          email                -> matheus_machado1997@hotmail.com
+          contato              -> 19982497858
+          funcional            -> SP123456
+          tipo_cargo           -> Administrador
+          tipo_permissao       -> Acesso Geral
+    FIM DA LINHA: 1
+    LINHA: 2
+          cod_colaborador      -> 2
+          cod_cargo            -> 1
+          cod_permissao        -> 4
+          nome_colaborador     -> Juan Leone
+          email                -> jc.leone98@gmail.com
+          contato              -> 19982497858
+          funcional            -> SP321654
+          tipo_cargo           -> Professor
+          tipo_permissao       -> Acesso Reserva
+    FIM DA LINHA: 2
+    LINHA: 3
+          cod_colaborador      -> 16
+          cod_cargo            -> 1
+          cod_permissao        -> 4
+          nome_colaborador     -> Bianca H Souza
+          email                -> bianca.bhs99@gmail.com
+          contato              -> 
+          funcional            -> SP45646
+          tipo_cargo           -> Professor
+          tipo_permissao       -> Acesso Reserva
+    FIM DA LINHA: 3
+    LINHA: 4
+          cod_colaborador      -> 3
+          cod_cargo            -> 1
+          cod_permissao        -> 4
+          nome_colaborador     -> Ana Livia
+          email                -> ana.livia09@hotmail.com
+          contato              -> 19982497858
+          funcional            -> SP147852
+          tipo_cargo           -> Professor
+          tipo_permissao       -> Acesso Reserva
+    FIM DA LINHA: 4
+    LINHA: 5
+          cod_colaborador      -> 17
+          cod_cargo            -> 1
+          cod_permissao        -> 4
+          nome_colaborador     -> Usuario Teste
+          email                -> matheus_machado1997@hotmail.com
+          contato              -> 
+          funcional            -> SP111111
+          tipo_cargo           -> Professor
+          tipo_permissao       -> Acesso Reserva
+    FIM DA LINHA: 5
+    LINHA: 6
+          cod_colaborador      -> 31
+          cod_cargo            -> 2
+          cod_permissao        -> 1
+          nome_colaborador     -> Joaquim da Silva
+          email                -> matheus_machado1997@hotmail.com
+          contato              -> 
+          funcional            -> 789654
+          tipo_cargo           -> Administrador
+          tipo_permissao       -> Acesso Geral
+    FIM DA LINHA: 6
+    LINHA: 7
+          cod_colaborador      -> 32
+          cod_cargo            -> 2
+          cod_permissao        -> 1
+          nome_colaborador     -> teste
+          email                -> teste@teste.com
+          contato              -> 
+          funcional            -> sp222
+          tipo_cargo           -> Administrador
+          tipo_permissao       -> Acesso Geral
+    FIM DA LINHA: 7
+    LINHA: 8
+          cod_colaborador      -> 33
+          cod_cargo            -> 1
+          cod_permissao        -> 4
+          nome_colaborador     -> Matheus Machado
+          email                -> matheus_machado1997@hotmail.com
+          contato              -> 19982497858
+          funcional            -> 111111
+          tipo_cargo           -> Professor
+          tipo_permissao       -> Acesso Reserva
+    FIM DA LINHA: 8
+    LINHA: 9
+          cod_colaborador      -> 34
+          cod_cargo            -> 1
+          cod_permissao        -> 4
+          nome_colaborador     -> teste login
+          email                -> teste@teste.com
+          contato              -> 19956566363
+          funcional            -> SP66333222
+          tipo_cargo           -> Professor
+          tipo_permissao       -> Acesso Reserva
+    FIM DA LINHA: 9
+    LINHA: 10
+          cod_colaborador      -> 35
+          cod_cargo            -> 1
+          cod_permissao        -> 4
+          nome_colaborador     -> Bruna Caetano
+          email                -> matheus_machado@hotmail.com
+          contato              -> 19982497858
+          funcional            -> RF000000
+          tipo_cargo           -> Professor
+          tipo_permissao       -> Acesso Reserva
+    FIM DA LINHA: 10
+    LINHA: 11
+          cod_colaborador      -> 36
+          cod_cargo            -> 1
+          cod_permissao        -> 4
+          nome_colaborador     -> Joao da silva
+          email                -> matheus_machado1997@hotmail.com
+          contato              -> 
+          funcional            -> pr123456
+          tipo_cargo           -> Professor
+          tipo_permissao       -> Acesso Reserva
+    FIM DA LINHA: 11
+    LINHA: 12
+          cod_colaborador      -> 37
+          cod_cargo            -> 1
+          cod_permissao        -> 4
+          nome_colaborador     -> jose costa
+          email                -> matheus_machado1997@hotmail.com
+          contato              -> 
+          funcional            -> df111111
+          tipo_cargo           -> Professor
+          tipo_permissao       -> Acesso Reserva
+    FIM DA LINHA: 12
+
+[15:50:27] - ERRO AO EXECUTAR QUERY: O processo não pode acessar o arquivo 'D:\projetos\audiovisual\backend\SystemLog\20201114.log' porque ele está sendo usado por outro processo. 
+SQL COM ERRO:  SELECT colab.cod_colaborador,         colab.nome_colaborador,         colab.funcional,         agend.data_reserva,         agend.hora_reserva,         agend.agendado_para,         agend.horario_de,         agend.horario_ate,         agend.data_entrega,         agend.hora_entrega,         equip.num_controle,         equip.marca,         equip.tipo,         equip.modelo  FROM app_colaboradores AS colab,       app_agendamento AS agend,       app_equipamentos AS equip,       app_equipamentos_agendados AS ea  WHERE agend.cod_colaborador = colab.cod_colaborador    AND ea.cod_equipamento = equip.cod_equipamento    AND agend.cod_agendamento = ea.cod_agendamento  ORDER BY agendado_para DESC
+[15:50:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE cod_colaborador = '15'
+
+[15:50:27] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_acesso           -> 9
+          cod_colaborador      -> 15
+          login                -> SP123456
+          senha                -> MTIz
+          status_ativo         -> S
+          auto_login           -> False
+          cod_auto_login       -> 
+    FIM DA LINHA: 1
+
+[15:50:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE cod_colaborador = '2'
+
+[15:50:27] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_acesso           -> 10
+          cod_colaborador      -> 2
+          login                -> SP321654
+          senha                -> MQ==
+          status_ativo         -> N
+          auto_login           -> False
+          cod_auto_login       -> 
+    FIM DA LINHA: 1
+
+[15:50:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE cod_colaborador = '16'
+
+[15:50:27] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_acesso           -> 12
+          cod_colaborador      -> 16
+          login                -> SP45646
+          senha                -> MQ==
+          status_ativo         -> N
+          auto_login           -> False
+          cod_auto_login       -> 
+    FIM DA LINHA: 1
+
+[15:50:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE cod_colaborador = '3'
+
+[15:50:27] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_acesso           -> 11
+          cod_colaborador      -> 3
+          login                -> SP147852
+          senha                -> MQ==
+          status_ativo         -> S
+          auto_login           -> False
+          cod_auto_login       -> 
+    FIM DA LINHA: 1
+
+[15:50:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE cod_colaborador = '17'
+
+[15:50:27] - NUMERO DE LINHAS RETORNADAS: 0
+
+[15:50:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE cod_colaborador = '31'
+
+[15:50:27] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_acesso           -> 26
+          cod_colaborador      -> 31
+          login                -> 789654
+          senha                -> MQ==
+          status_ativo         -> S
+          auto_login           -> False
+          cod_auto_login       -> 
+    FIM DA LINHA: 1
+
+[15:50:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE cod_colaborador = '32'
+
+[15:50:27] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_acesso           -> 27
+          cod_colaborador      -> 32
+          login                -> sp222
+          senha                -> MQ==
+          status_ativo         -> S
+          auto_login           -> False
+          cod_auto_login       -> 
+    FIM DA LINHA: 1
+
+[15:50:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE cod_colaborador = '33'
+
+[15:50:27] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_acesso           -> 28
+          cod_colaborador      -> 33
+          login                -> 111111
+          senha                -> MQ==
+          status_ativo         -> S
+          auto_login           -> False
+          cod_auto_login       -> 
+    FIM DA LINHA: 1
+
+[15:50:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE cod_colaborador = '34'
+
+[15:50:27] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_acesso           -> 29
+          cod_colaborador      -> 34
+          login                -> SP66333222
+          senha                -> MQ==
+          status_ativo         -> S
+          auto_login           -> False
+          cod_auto_login       -> 
+    FIM DA LINHA: 1
+
+[15:50:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE cod_colaborador = '35'
+
+[15:50:27] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_acesso           -> 30
+          cod_colaborador      -> 35
+          login                -> RF000000
+          senha                -> MTIz
+          status_ativo         -> S
+          auto_login           -> False
+          cod_auto_login       -> 
+    FIM DA LINHA: 1
+
+[15:50:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE cod_colaborador = '36'
+
+[15:50:27] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_acesso           -> 31
+          cod_colaborador      -> 36
+          login                -> pr123456
+          senha                -> MQ==
+          status_ativo         -> S
+          auto_login           -> False
+          cod_auto_login       -> 
+    FIM DA LINHA: 1
+
+[15:50:27] - SQL EXECUTADO COM SUCESSO: SELECT * FROM app_acessos WHERE cod_colaborador = '37'
+
+[15:50:27] - NUMERO DE LINHAS RETORNADAS: 1
+DADOS RETORNADOS:
+    LINHA: 1
+          cod_acesso           -> 32
+          cod_colaborador      -> 37
+          login                -> df111111
+          senha                -> MQ==
+          status_ativo         -> S
+          auto_login           -> False
+          cod_auto_login       -> 
+    FIM DA LINHA: 1
