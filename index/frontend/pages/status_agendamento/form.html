@@ -163,7 +163,7 @@
 
                             </div>
                             <div class="card-footer">
-                                <button type="reset" class="btn btn-danger btn-sm buttonsRight">
+                                <button type="reset" id="reset" class="btn btn-danger btn-sm buttonsRight">
                                     <i class="fa fa-ban"></i> Limpar
                                 </button>
                                 
@@ -226,6 +226,13 @@
                     getStatusAgendamento(params['id']);
                 });
             }
+        });
+
+        jQuery(document).ready(function(){
+            jQuery("#reset").click(function(){
+                jQuery("#tipo_status_agendamento").val("");
+                jQuery("#descricao_status_agendamento").val("");                
+            });
         });
     </script>
 

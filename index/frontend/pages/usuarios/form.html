@@ -249,7 +249,7 @@
 
                             </div>
                             <div class="card-footer">
-                                <button type="reset" class="btn btn-danger btn-sm buttonsRight">
+                                <button type="reset" id="reset" class="btn btn-danger btn-sm buttonsRight">
                                     <i class="fa fa-ban"></i> Limpar
                                 </button>
                                 
@@ -336,6 +336,20 @@
                 }
             }
 
+        });
+        jQuery(document).ready(function(){
+            jQuery("#reset").click(function(){
+                jQuery("#nome_colaborador").val("");
+                jQuery("#email").val("");
+                jQuery("#contato").val("");
+                jQuery("#funcional").val("");
+                jQuery("#login").val("");
+                jQuery("#senha").val("");
+                jQuery("#conf_senha").val("");
+                jQuery("#permissao").val("");
+                jQuery("#cargo").val("");
+                
+            });
         });
     </script>
 

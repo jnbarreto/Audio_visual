@@ -187,7 +187,7 @@
 
                             </div>
                             <div class="card-footer">
-                                <button type="reset" class="btn btn-danger btn-sm buttonsRight">
+                                <button type="reset" id="reset" class="btn btn-danger btn-sm buttonsRight">
                                     <i class="fa fa-ban"></i> Limpar
                                 </button>
                                 
@@ -250,6 +250,16 @@
                     getEquipamentos(params['id']);
                 });
             }
+        });
+
+        jQuery(document).ready(function(){
+            jQuery("#reset").click(function(){
+                jQuery("#cod_patrimonio").val("");
+                jQuery("#num_controle").val("");    
+                jQuery("#marca").val("");
+                jQuery("#tipo").val("");  
+                jQuery("#modelo").val("");            
+            });
         });
     </script>
 

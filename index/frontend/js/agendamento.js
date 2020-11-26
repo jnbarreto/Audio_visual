@@ -27,10 +27,12 @@ jQuery(document).ready(function(){
 
     jQuery("#horario_de_ate").change(function(){
 
+        var data = jQuery("#agendado_para").val();
         var hora = jQuery("#horario_de_ate").val();
-            hora = hora.split(' - ')[0];
+        var data_hora = data + "|" + hora.split(' - ')[0];
+
         var dados = {
-            hora : hora
+            data_hora : data_hora
         }
 
         consultaWS("agendamento", "verificaHorario", dados, verificaHorarioSel, false);
@@ -217,4 +219,104 @@ function listaSolicitantes(session)
             }
         }
     });
+}
+
+function equipamentos_reservados()
+{
+    var session         = getSessionStorage("AcessoColaborador");
+
+    var dados = {
+        cod_colaborador : session.cod_colaborador
+    }
+
+    console.log(JSON.stringify(dados));
+
+    consultaWS("agendamento", "getAgendColab", dados, function(Retorno)
+    {
+        var Listagem = '<table id="table_id" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">';
+        Listagem += '   <thead>';
+        Listagem += '      <tr>';
+        Listagem += '         <th>Marca</th>';
+        Listagem += '         <th>Tipo</th>';
+        Listagem += '         <th>Status</th>';
+        Listagem += '         <th style="width:400px;"></th>';
+        Listagem += '      </tr>';
+        Listagem += '   </thead>';
+        Listagem += '<tbody>';
+
+        for(var i = 0 ; i < Retorno.ListaAgendamentos.length; i++)
+        {
+            var cod_status_agendamento = Retorno.ListaAgendamentos[i].cod_status_agendamento;
+            var estilo   = '';
+            var valuenow = '';
+            var cor      = '';
+
+            switch(cod_status_agendamento)
+            {
+                case 1:
+                    estilo   = "width: 16%";
+                    valuenow = "16";
+                    cor      = "bg-success";
+                break;
+
+                case 2:
+                    estilo = "width: 32%";
+                    valuenow = "32";
+                    cor      = "bg-warning";
+                break;
+
+                case 3:
+                    estilo = "width: 48%";
+                    valuenow = "48";
+                    cor      = "bg-warning";
+                break;
+
+                case 4:
+                    estilo = "width: 64%";
+                    valuenow = "64";
+                    cor      = "bg-info";
+                break;
+
+                case 5:
+                    estilo = "width: 80%";
+                    valuenow = "80";
+                    cor      = "bg-danger";
+                break;
+
+                case 6:
+                    estilo = "width: 100%";
+                    valuenow = "100";
+                    cor      = "bg-success";
+                break;
+            }
+
+
+            for(var j = 0; j < Retorno.ListaAgendamentos[i].Equipamento.length; j++)
+            {
+                Listagem += '<tr>';
+                Listagem += '   <td>'+Retorno.ListaAgendamentos[i].Equipamento[j].marca.toUpperCase()+'</td>';
+                Listagem += '   <td>'+Retorno.ListaAgendamentos[i].Equipamento[j].tipo.toUpperCase()+'</td>';
+                Listagem += '   <td>'+Retorno.ListaAgendamentos[i].Status.tipo_status_agendamento.toUpperCase()+'</td>';
+                Listagem += '   <td>' + 
+                            '       <div class="progress mb-2">' +
+                            '           <div class="progress-bar '+ cor +' progress-bar-striped progress-bar-animated" role="progressbar" style="'+ estilo +'" aria-valuenow="'+ valuenow +'" aria-valuemin="0" aria-valuemax="100">'+valuenow+'%</div>' +
+                            '       </div>' +
+                            '   </td>';
+
+                Listagem += '</tr>';
+            }
+        }
+        Listagem += '</tbody>';
+        Listagem += '</table>';
+
+        jQuery("#ListaAgendados").html(Listagem);
+
+        jQuery('#table_id').DataTable({
+            keys: false,
+            responsive: true,
+            "lengthMenu": [[4],[4]],		  
+            "bLengthChange": false
+        });
+
+    }, false);
 }

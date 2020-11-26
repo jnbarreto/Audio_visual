@@ -225,7 +225,7 @@
 
                             </div>
                             <div class="card-footer">
-                                <button type="reset" class="btn btn-danger btn-sm buttonsRight">
+                                <button type="reset" id="reset" class="btn btn-danger btn-sm buttonsRight">
                                     <i class="fa fa-ban"></i> Limpar
                                 </button>
                                 
@@ -318,6 +318,7 @@
             jQuery("#salvar_agendamento").click(function(){
                 salvarAgendamento();
             });
+        
 
             // var params = getUrlParametro();
             // if(params['id'] != undefined)
@@ -326,6 +327,17 @@
             //         getStatusAgendamento(params['id']);
             //     });
             // }
+        });
+
+        jQuery(document).ready(function(){
+            jQuery("#reset").click(function(){
+                jQuery("#funcional").val("");
+                jQuery("#cod_colaborador").val("");
+                jQuery("#agendado_para").val("dd/mm/aaaa");
+                jQuery("#horario_de_ate").val("");
+                jQuery("#equipamento").val("");
+                jQuery("#cod_equipamento").val("");
+            });
         });
     </script>
 
